@@ -1,7 +1,9 @@
- <?php
- session_start();
+<html>
+	<body>
+		<?php
+		session_start();
 		if($_POST['email']=='' || $_POST['password']==''){
-			header("Location:login.html");	
+			header("Location:login.php");	
 		}
 		$server="localhost";
 		$use="root";
@@ -16,11 +18,14 @@
 		}
 		if($_POST['email']==$data1&&$_POST['password']==$data2){
 			$_SESSION['email']=$_POST['email'];
-			header("Location:ProcessLogin.php"); 
+			header("Location:welcome.php"); 
 		}
 		else{
-			header("Location:login.html");	
+			echo "<script type='text/javascript'>alert('Incorrect credentials')</script>";
+			header("Refresh:0"); 
 		}
-		
-		
- ?>
+
+
+		?>
+	</body>
+</html>
