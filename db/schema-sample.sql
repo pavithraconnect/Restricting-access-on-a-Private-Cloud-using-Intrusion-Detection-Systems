@@ -40,6 +40,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB;
 
+
+SELECT username, email, password, p.label from users as u, permission as p where u.user_id = p.user_id;
 --
 -- Dumping data for table `users`
 --
